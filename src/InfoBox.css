@@ -1,0 +1,18 @@
+
+  .infoBox {
+    text-align: center;
+    padding: 1rem 0rem;
+    box-sizing: border-box; /* Ensures padding is included in element's width and height */
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; 
+    border-radius: 8px;
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+    
+  }
+  

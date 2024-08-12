@@ -1,0 +1,87 @@
+
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+/* General styling */
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.weatherApp-container {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100vh auto;
+  padding: 1rem;
+  background: #fffbb7;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.weather-info-container {
+  flex: 1 1 auto;
+  width: 40%;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 8px rgba(122, 94, 94, 0.1);
+  background: #e2e5ec;
+  width: 40vmax; 
+  border: 2px solid blue;
+  box-sizing: border-box;
+}
+
+.map-container {
+  flex: 1 1 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60%; 
+  border: 2px solid rgb(56, 9, 244);
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+}
+
+.weatherApp-container h1 {
+  margin: 0.5rem;
+  color: rgb(24, 74, 139);
+  font-size: 2em;
+
+}
+
+/* Add media query to make map container full width on smaller screens */
+@media (max-width: 750px) {
+  .weatherApp-container {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  .weather-info-container
+  {
+    width: 100%; /* Full width on smaller screens */
+
+  }
+  .map-container {
+     width: 100%;
+     min-height: 400px;
+  }
+}
+
+@media (max-width: 335px) {
+  .weatherApp-container {
+    flex-direction: column; /* Stack vertically on very small screens */
+    padding: 0.5rem; /* Reduce padding */
+    gap: 0.5rem; /* Reduce gap between items */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .weather-info-container,
+  .map-container {
+    width: 100%; /* Ensure full width on very small screens */
+    min-height: 250px; /* Adjust minimum height for better fit */
+    font-size: 0.9em; 
+    box-sizing: border-box; /* Include border and padding in width calculation */
+  }
+
+  .weatherApp-container h1 {
+    font-size: 1.2em; /* Smaller font size for very small screens */
+  }
+}
+

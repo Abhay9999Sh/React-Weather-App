@@ -1,0 +1,50 @@
+
+.error-message {
+  color: #e00707;
+  margin-top: 1rem;
+  font-size: 2.5em;
+}
+
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.search .MuiTextField-root {
+  width: 100%;
+  max-width: 300px;
+  background-color: #f6f8ff ;
+}
+
+#outlined-basic {
+  background-color: #f6f8ff;
+  color: black;
+}
+
+
+.search Button {
+  margin-top: 10px; /* Space between text field and button */
+  background-color: rgb(126, 102, 16);
+}
+
+@media (max-width: 300px) {
+  .search form {
+    width: 100%; /* Make form fill the width of its container */
+  }
+
+  .search .MuiTextField-root,
+  .search Button {
+    width: 100%; /* Make text field and button take full width */
+    margin-top: 10px; /* Add margin to the button */
+  }
+}
+
