@@ -6,9 +6,25 @@ import { Icon } from 'leaflet';
 
 const MapBox = ({ lat, lon }) => {
   const [mapCenter, setMapCenter] = useState({ lat, lng: lon });
+  const [mapHeight, setMapHeight] = useState('651px');
+
 
   useEffect(() => {
     setMapCenter({ lat, lng: lon });
+
+    // Update map height based on window width
+    const handleResize = () => {
+      if (window.innerWidth <= 400) {
+        setMapHeight('396px'); // Adjust height for very small screens
+      } else {
+        setMapHeight('651px'); // Default height
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial height
+
+    return () => window.removeEventListener('resize', handleResize);
   }, [lat, lon]);
 
   const customIcon = new Icon({
@@ -17,7 +33,7 @@ const MapBox = ({ lat, lon }) => {
   });
 
   return (
-    <div className='Mapbox' style={{ height: 651, width: '100%',   }}>
+    <div className='Mapbox' style={{ height: mapHeight, width: '100%',   }}>
       <MapContainer
         center={mapCenter}
         zoom={13}
